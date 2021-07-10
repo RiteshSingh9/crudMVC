@@ -16,11 +16,18 @@ switch ($action) {
         $students = new Students();
         $students->showStudentList();
         break;
-    case 'students-add':
-        $students = new Students();
+
     case 'student-delete':
         $student = new Students();
+        $student->studentDelete($_GET['id']);
         break;
+
+    case 'students-add':
+        // echo $_SERVER['REQUEST_METHOD'];
+        $students = new Students();
+        $students->studentAdd();
+        break;
+
     default:
         require './web/home.php';
         break;

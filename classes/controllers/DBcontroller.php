@@ -24,25 +24,27 @@ class DBcontroller
         return $conn ;
     }
 
-    public function rawQuery($query)
+    public function rawQuery($query, $type="")
     {
         $data=[];
         $result = $this->conn->query($query);
         if($result) {
-            if($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    $data[] = $row ;
+            if($type != "delete") {
+                if($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $data[] = $row ;
+                    }
+                    $data = array(
+                        "result" => true,
+                        "data" => $data
+                    );
+                    return $data ;
+                } else {
+                    $data = array(
+                        "result" => false,
+                        "msg" => "No data Found"
+                    );
                 }
-                $data = array(
-                    "result" => true,
-                    "data" => $data
-                );
-                return $data ;
-            } else {
-                $data = array(
-                    "result" => false,
-                    "msg" => "No data Found"
-                );
             }
         } else {
             $data = array(
@@ -53,5 +55,3 @@ class DBcontroller
     }
 
 };
-
-?>

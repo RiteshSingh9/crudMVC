@@ -3,7 +3,8 @@
     <br>
 
     <table>
-        <a href="index.php?action=students-add" class="waves-effect waves-light btn blue"><i class="material-icons right">add</i>Add Student</a>
+        <!-- <a href="index.php?action=student-add" class="waves-effect waves-light btn blue"><i class="material-icons right">add</i>Add Student</a> -->
+        <a href="index.php?action=students-add">Add</a>
         <thead>
             <tr>
                 <th>Roll no.</th>
@@ -24,6 +25,7 @@
                 echo '<td>' . $value['stu_class'] . '</td>';
                 echo '<td>
                         <a href="index.php?action=student-delete&id=' . $value['stu_id'] . '" class="red-text">Delete</a>
+                        <a href="index.php?action=student-edit&id=' . $value['stu_id'] . '" class="red-text">Edit</a>
                     </td>';
                 echo "</tr>";
             }
