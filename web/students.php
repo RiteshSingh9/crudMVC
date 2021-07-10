@@ -2,9 +2,9 @@
 <div class="content">
     <br>
 
-    <table>
+    <table class="striped highlight centered">
         <!-- <a href="index.php?action=student-add" class="waves-effect waves-light btn blue"><i class="material-icons right">add</i>Add Student</a> -->
-        <a href="index.php?action=students-add">Add</a>
+        <a href="index.php?action=students-add"  class="waves-effect waves-light btn blue">Add Students</a>
         <thead>
             <tr>
                 <th>Roll no.</th>
@@ -24,8 +24,8 @@
                 echo '<td>' . $value['stu_dob'] . '</td>';
                 echo '<td>' . $value['stu_class'] . '</td>';
                 echo '<td>
-                        <a href="index.php?action=student-delete&id=' . $value['stu_id'] . '" class="red-text">Delete</a>
-                        <a href="index.php?action=student-edit&id=' . $value['stu_id'] . '" class="red-text">Edit</a>
+                        <a href="index.php?action=student-edit&id=' . $value['stu_id'] . '" class="btn waves-effect waves-light blue ">Edit</a>
+                        <a href="index.php?action=student-delete&id=' . $value['stu_id'] . '" class="btn waves-effect waves-light red ">Delete</a>
                     </td>';
                 echo "</tr>";
             }

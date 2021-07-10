@@ -17,7 +17,10 @@
         <!-- navbar -->
         <nav>
             <div class="nav-wrapper purple">
-                <a href="#" class="brand-logo right"><img src="./web/assets/image/AttendanceManagementSystem.jpg" width="200px" alt="AMS"></a>
+                <a href="#" class="brand-logo right">
+                    <!-- <img src="./web/assets/image/AttendanceManagementSystem.jpg" width="200px" alt="AMS"> -->
+                    AMS
+                </a>
                 <!-- trigger for mobile navbar -->
                 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -39,4 +42,3 @@
         </ul>
 
     </header>
-

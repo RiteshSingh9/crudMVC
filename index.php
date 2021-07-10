@@ -28,6 +28,11 @@ switch ($action) {
         $students->studentAdd();
         break;
 
+    case 'student-edit':
+        $students = new Students();
+        $students->studentEdit($_GET['id']);
+        break;
+
     default:
         require './web/home.php';
         break;

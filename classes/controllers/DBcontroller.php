@@ -29,7 +29,7 @@ class DBcontroller
         $data=[];
         $result = $this->conn->query($query);
         if($result) {
-            if($type != "delete") {
+            if($type === 'select') {
                 if($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         $data[] = $row ;
@@ -45,6 +45,8 @@ class DBcontroller
                         "msg" => "No data Found"
                     );
                 }
+            } else {
+                return true;
             }
         } else {
             $data = array(
